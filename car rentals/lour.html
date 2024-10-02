@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche de location de voiture</title>
+    <link rel="stylesheet" href="louer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container2">
+        <a href="index.html" class="home-button">Home</a>
+    </div>
+    <div class="container">
+        <h1>Recherche de location de voiture</h1>
+        <form id="search-form" onsubmit="return searchCars()">
+            <label for="car-make">Marque de voiture:</label>
+            <select id="car-make" name="car-make" required>
+                <option value="">Sélectionnez une marque</option>
+                <option value="toyota">Toyota</option>
+                <option value="honda">Honda</option>
+                <option value="ford">Ford</option>
+                <option value="bmw">BMW</option>
+                <option value="tesla">Tesla</option>
+                <option value="lada">Lada</option>
+            </select>
+
+            <label for="fuel-type">Type de carburant:</label>
+            <select id="fuel-type" name="fuel-type" required>
+                <option value="">Sélectionnez le type de carburant</option>
+                <option value="electric">Electric</option>
+                <option value="hybrid">Hybrid</option>
+                <option value="gas">Gas</option>
+            </select>
+
+            <label for="rental-date">Date de location:</label>
+            <input type="date" id="rental-date" name="rental-date" required>
+
+            <label for="rental-time">Durée de location:</label>
+            <input type="time" id="rental-time" name="rental-time" required>
+
+            <label for="return-date">Date de retour:</label>
+            <input type="date" id="return-date" name="return-date" required>
+
+            <label for="return-time">Heure de retour:</label>
+            <input type="time" id="return-time" name="return-time" required>
+
+            <input type="submit" value="Recherche" style="font-family:Orbitron;">
+        </form>
+
+        <div id="results" class="results">
+            <h2>Voitures disponibles</h2>
+            <div class="car-list">
+                <div class="car-item" data-make="toyota" data-fuel="electric">
+                    <a href="https://www.budget.com/en/cars/vehicles/us/e" target="_blank"><img src="/images/images (5).jfif" alt="Toyota Camry"></a>
+                    <h3>Toyota Camry</h3>
+                    <p>Electric | $50/jour</p>
+                </div>
+                <div class="car-item" data-make="honda" data-fuel="hybrid">
+                    <a href="https://turo.com/us/en/car-rental/united-states/springfield-ma/honda/accord-hybrid/2133810" target="_blank"><img src="/images/images (6).jfif" alt="Honda Accord"></a>
+                    <h3>Honda Accord</h3>
+                    <p>Hybrid | $45/jour</p>
+                </div>
+                <div class="car-item" data-make="ford" data-fuel="gas">
+                    <a href="https://www.enterprise.com/en/exotic-car-rental/vehicles/american-muscle-car/ford-mustang-gt.html" target="_blank"><img src="/images/new-mustang-atlas-blue.jpg" alt="Ford Mustang"></a>
+                    <h3>Ford Mustang</h3>
+                    <p>Gas | $60/jour</p>
+                </div>
+                <div class="car-item" data-make="bmw" data-fuel="gas">
+                    <a href="https://www.sixt.co.uk/fleet/bmw-car-hire/3-series/" target="_blank"><img src="/images/images (7).jfif" alt="BMW 3 Series"></a>
+                    <h3>BMW 3 Series</h3>
+                    <p>Gas | $70/jour</p>
+                </div>
+                <div class="car-item" data-make="chevrolet" data-fuel="electric">
+                    <a href="https://turo.com/us/en/car-rental/united-states/phoenix-az/chevrolet/bolt-ev/1812455" target="_blank"><img src="/images/images (16).jfif" alt="Chevrolet Bolt"></a>
+                    <h3>Chevrolet Bolt</h3>
+                    <p>Electric | $55/jour</p>
+                </div>
+                <div class="car-item" data-make="nissan" data-fuel="electric">
+                    <a href="https://www.zipcar.com/en-gb/vehicles/nissan-leaf" target="_blank"><img src="/images/images (9).jfif" alt="Nissan Leaf"></a>
+                    <h3>Nissan Leaf</h3>
+                    <p>Electric | $50/jour</p>
+                </div>
+                <div class="car-item" data-make="toyota" data-fuel="hybrid">
+                    <a href="https://www.enterprise.com/en/car-rental/vehicles/us/suvs/intermediate.html" target="_blank"><img src="/images/images (10).jfif" alt="Toyota RAV4"></a>
+                    <h3>Toyota RAV4</h3>
+                    <p>Hybrid | $48/jour</p>
+                </div>
+                <div class="car-item" data-make="honda" data-fuel="gas">
+                    <a href="https://turo.com/us/en/suv-rental/united-states/honda" target="_blank"><img src="/images/images (11).jfif" alt="Honda CR-V"></a>
+                    <h3>Honda CR-V</h3>
+                    <p>Gas | $55/jour</p>
+                </div>
+                <div class="car-item" data-make="ford" data-fuel="gas">
+                    <a href="https://renty.ae/cars/ford-escape" target="_blank"><img src="/images/images (12).jfif" alt="Ford Escape"></a>
+                    <h3>Ford Escape</h3>
+                    <p>Gas | $52/jour</p>
+                </div>
+                <div class="car-item" data-make="bmw" data-fuel="gas">
+                    <a href="https://www.sixt.com/fleet/bmw-rental/x3/" target="_blank"><img src="/images/images (13).jfif" alt="BMW X3"></a>
+                    <h3>BMW X3</h3>
+                    <p>Gas | $75/jour</p>
+                </div>
+                <div class="car-item" data-make="tesla" data-fuel="electric">
+                    <a href="https://www.teslarents.com/model-y-rental" target="_blank"><img src="/images/images (14).jfif" alt="Tesla Model Y"></a>
+                    <h3>Tesla Model Y</h3>
+                    <p>Electric | $80/jour</p>
+                </div>
+                <div class="car-item" data-make="lada" data-fuel="gas">
+                    <a href="https://takecars.com/en/armenia/lada-niva/1159/?pickup_date=11%2F10%2F2024&date=11%2F10%2F2024&pickup_time=10%3A00&pickup_place=526&pickup_point=1060&return_date=18%2F10%2F2024&date=18%2F10%2F2024&return_time=10%3A00&return_place=526&return_point=1060" target="_blank"><img src="/images/images (15).jfif" alt="BMW X3"></a>
+                    <h3>Lada Niva</h3>
+                    <p>Gas | $20/jour</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="site-list">
+        <h1><b>Vous n'avez pas trouvé ce dont vous avez besoin ? <br> voici quelques-uns de nos partenaires qui pourraient avoir ce que vous recherchez:</b></h1>
+    <div class="site-item">
+        <a href="https://www.1servicecar.com/car-rental-agency-in-mohammedia" target="_blank"><img src="/images/Screenshot 2024-10-01 131316.png" alt="Honda CR-V"></a>
+    </div>
+    <div class="site-item">
+        <a href="https://www.aircar.ma/" target="_blank"><img src="/images/Screenshot 2024-10-01 131630.png" alt="Honda CR-V"></a>
+    </div>
+    <div class="site-item">
+        <a href="https://www.sixt.com/" target="_blank"><img src="/images/Screenshot 2024-10-01 121923.png" alt="Honda CR-V"></a>
+    </div>
+    <div class="site-item">
+        <a href="https://turo.com/fr/fr" target="_blank"><img src="/images/Screenshot 2024-10-01 121346.png" alt="Honda CR-V"></a>
+    </div>
+    <div class="site-item">
+        <a href="https://takecars.com/en/" target="_blank"><img src="/images/Screenshot 2024-10-01 131934.png" alt="Honda CR-V"></a>
+    </div>
+    <div class="site-item">
+        <a href="https://www.teslarents.com/" target="_blank"><img src="/images/Screenshot 2024-10-01 132013.png" alt="Honda CR-V"></a>
+    </div>
+    </div>
+    <script>
+        function searchCars() {
+            const make = document.getElementById('car-make').value;
+            const fuelType = document.getElementById('fuel-type').value;
+            const carItems = document.querySelectorAll('.car-item');
+
+            
+            carItems.forEach(item => {
+                item.style.display = 'block';
+            });
+
+            
+            carItems.forEach(item => {
+                const itemMake = item.getAttribute('data-make');
+                const itemFuel = item.getAttribute('data-fuel');
+
+                if ((make && itemMake !== make) || (fuelType && itemFuel !== fuelType)) {
+                    item.style.display = 'none'; 
+                }
+            });
+
+            return false; 
+        }
+    </script>
+</body>
+</html>

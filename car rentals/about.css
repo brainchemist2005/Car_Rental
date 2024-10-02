@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:"Orbitron";
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 50px;
+    background:linear-gradient(#2bd659, #17bf9b);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #75e0c0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: large;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #45a049;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin: 20px 0 10px;
+    color: #333;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #007BFF; 
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; 
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+    color: #777;
+}
+.home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    position:relative;
+    left:1950px;
+    top:-30px;
+}
+
+.home-button:hover {
+    background-color: #45a049;
+}
