@@ -87,3 +87,13 @@ footer {
 .home-button:hover {
     background-color: #45a049;
 }
+.navbuttons{
+    background-color: #4CAF50;
+    font-size: large;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+    left:545px;
+}
