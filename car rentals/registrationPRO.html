@@ -10,50 +10,64 @@
 <body>
     <a href="index.html" target="_self" title="Home">
         <button class="navbuttons" style="font-family:Orbitron;">Home</button>
-        </a>
-        <a href="lour.html" target="_self" title="Louer">
+    </a>
+    <a href="lour.html" target="_self" title="Louer">
         <button class="navbuttons" style="font-family:Orbitron;">Louer</button>
-        </a>
-        <a href="about.html" target="_self" title="à propos de nous">
+    </a>
+    <a href="about.html" target="_self" title="à propos de nous">
         <button class="navbuttons" style="font-family:Orbitron;">à propos de nous</button>
-        </a>
-        <a href="contact.html" target="_self" title="Contactez-nous">
+    </a>
+    <a href="contact.html" target="_self" title="Contactez-nous">
         <button class="navbuttons" style="font-family:Orbitron;">Contactez-nous</button>
-        </a>
-        <a href="partner.html" target="_self" title="nos partenaires">
+    </a>
+    <a href="partner.html" target="_self" title="nos partenaires">
         <button class="navbuttons" style="font-family:Orbitron;">nos partenaires</button>
-        </a>
+    </a>
+    
     <div class="container">
         <h3>Inscription d'entreprise</h3>
-        <form action="/signup" method="POST">
+        <form id="signupForm">
             <label for="company-name">Nom de l'entreprise:</label>
             <input type="text" id="company-name" name="company-name" required>
-
-            <label for="phone">Telephone:</label>
-            <input type="tel" id="phone" name="phone" required>
-
-            <label for="address">Addresse:</label>
-            <input type="text" id="address" name="address" required>
-
-            <label for="website">Site web:</label>
-            <input type="url" id="website" name="website" required>
-
+        
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
-
-            <label for="password">Mot de passe:</label>
-            <input type="password" id="password" name="password" maxlength="12" required>
-
-            <label for="longitude">Longitude:</label>
-            <input type="text" id="longitude" name="longitude" required>
-
-            <label for="latitude">Latitude:</label>
-            <input type="text" id="latitude" name="latitude" required>
-
+        
             <input type="submit" value="S'inscrire" style="font-family:Orbitron;">
         </form>
-        <p>Vous avez déjà un compte ? <a href="Connexion.html">Connectez-vous ici</a></p>
-        <p>Besoin d'un compte normal ? <a href="registration.html">Inscrivez-vous ici</a></p>
+        
+        <script>
+            document.getElementById('signupForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                const formData = {
+                    name: document.getElementById('company-name').value,
+                    email: document.getElementById('email').value
+                };
+
+                // Send form data to the server
+                fetch('http://localhost:3000/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Success:', data);
+                    window.location.href = 'afterSignUp.html'; 
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+            });
+        </script>
     </div>
 </body>
 </html>

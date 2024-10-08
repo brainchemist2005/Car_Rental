@@ -1,0 +1,88 @@
+/* afterSignup.css */
+
+/* Global Styles */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container Styles */
+.container {
+    max-width: 600px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
+/* Heading Style */
+h1 {
+    color: #4CAF50;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Paragraph Style */
+p {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Link Button Styles */
+a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #4CAF50;
+    padding: 12px 25px;
+    border-radius: 5px;
+    margin: 10px;
+    font-size: 16px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    a {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
