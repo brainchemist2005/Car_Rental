@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="registration.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="index.html" target="_self" title="Home">
+        <button class="navbuttons" style="font-family:Orbitron;">Home</button>
+    </a>
+    <a href="lour.html" target="_self" title="Louer">
+        <button class="navbuttons" style="font-family:Orbitron;">Louer</button>
+    </a>
+    <a href="about.html" target="_self" title="à propos de nous">
+        <button class="navbuttons" style="font-family:Orbitron;">à propos de nous</button>
+    </a>
+    <a href="contact.html" target="_self" title="Contactez-nous">
+        <button class="navbuttons" style="font-family:Orbitron;">Contactez-nous</button>
+    </a>
+    <a href="partner.html" target="_self" title="nos partenaires">
+        <button class="navbuttons" style="font-family:Orbitron;">nos partenaires</button>
+    </a>
+    <div class="container">
+        <h3>S'inscrire</h3>
+        <form action="/signup" method="POST">
+            <label for="first-name">Prénom:</label>
+            <input type="text" id="first-name" name="first-name" required>
+
+            <label for="last-name">Nom:</label>
+            <input type="text" id="last-name" name="last-name" required>
+
+            <label for="phone">Telephone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Mot de passe:</label>
+            <input type="password" id="password" name="password" maxlength="12" required>
+
+            <input type="submit" value="S'inscrire" style="font-family:Orbitron;">
+        </form>
+        <p>Vous avez déjà un compte ? <a href="Connexion.html">Connectez-vous ici</a></p>
+        <p>Besoin d'un compte professionnel ?<a href="registrationPRO.html">inscrivez-vous ici</a></p>
+    </div>
+</body>
+</html>
